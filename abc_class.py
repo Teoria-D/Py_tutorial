@@ -45,3 +45,7 @@ class Cube(Shape):
             定義しないとTypeErrorを返す
         """
         cmds.polyCube(d=self.depth,w=self.width, h=self.height)
+
+mycube = Cube(1.0, 3.0, 6.0)
+mycube.create()
+# 深さ1、幅3、高さ6のキューブができる
