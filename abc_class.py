@@ -1,9 +1,10 @@
 # -*- coding: utf_8 -*-
-"""抽象クラス・具象クラスについての落書き
-"""
-from abc import ABC
-from abc import abstractmethod
+"""抽象クラス・具象クラスについての落書き"""
+
+from abc import ABC, abstractmethod
+
 import maya.cmds as cmds
+
 
 class Shape(ABC):
     """形状を題材に抽象クラスを定義してみる
@@ -11,6 +12,7 @@ class Shape(ABC):
     Args:
         ABC : 抽象基底クラス。これを継承したクラスを、抽象クラスという
     """
+
     def __init__(self, name):
         """Shapeクラスのコンストラクタ
 
@@ -44,7 +46,8 @@ class Cube(Shape):
         Note:
             定義しないとTypeErrorを返す
         """
-        cmds.polyCube(d=self.depth,w=self.width, h=self.height)
+        cmds.polyCube(d=self.depth, w=self.width, h=self.height)
+
 
 mycube = Cube(1.0, 3.0, 6.0)
 mycube.create()
